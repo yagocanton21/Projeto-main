@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     
+    // Mostrar mensagem de carregamento
+    mensagemDiv.innerHTML = '<div class="alert alert-info">Processando registro...</div>';
+    
     // Enviar requisição de registro
     fetch('/api/auth/registro', {
       method: 'POST',
@@ -37,12 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
     .then(response => {
-      if (!response.ok) {
-        return response.json().then(err => {
-          throw new Error(err.error || 'Erro ao registrar');
-        });
-      }
-      return response.json();
+      return response.json().then(data => {
+        if (!response.ok) {
+          throw new Error(data.error || 'Erro ao registrar');
+        }
+        return data;
+      });
     })
     .then(data => {
       mensagemDiv.innerHTML = '<div class="alert alert-success">Registro realizado com sucesso! Redirecionando para o login...</div>';

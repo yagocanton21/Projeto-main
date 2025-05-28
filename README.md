@@ -1,13 +1,15 @@
 # Sistema de Gerenciamento de Alunos
 
-Sistema simples para gerenciamento de cadastro de alunos utilizando Node.js, PostgreSQL e Docker.
+Sistema completo para gerenciamento de cadastro de alunos utilizando Node.js, PostgreSQL e Docker.
 
 ## Funcionalidades
 
-- Adicionar alunos
-- Excluir cadastro de alunos
-- Alterar cadastro de alunos
-- Listar todos os alunos cadastrados
+- Sistema de autenticação com diferentes níveis de acesso (admin/aluno)
+- Cadastro de alunos com validação de dados
+- Login com email ou nome de usuário
+- Perfil de aluno com edição de informações
+- Painel administrativo para gerenciar todos os alunos
+- Persistência de dados entre reinicializações
 
 ## Tecnologias Utilizadas
 
@@ -15,6 +17,7 @@ Sistema simples para gerenciamento de cadastro de alunos utilizando Node.js, Pos
 - **Banco de Dados**: PostgreSQL
 - **ORM**: Sequelize
 - **Frontend**: HTML, CSS, JavaScript e Bootstrap
+- **Autenticação**: JWT e bcrypt
 - **Containerização**: Docker e Docker Compose
 
 ## Como Executar
@@ -31,18 +34,36 @@ Sistema simples para gerenciamento de cadastro de alunos utilizando Node.js, Pos
    http://localhost:3000
    ```
 
+## Credenciais de Administrador
+
+- **Email**: admin@admin.com
+- **Username**: admin
+- **Senha**: admin
+
 ## Estrutura do Projeto
 
 ```
 projeto/
 ├── app/                    # Aplicação Node.js
 │   ├── public/             # Arquivos estáticos (frontend)
-│   │   ├── index.html      # Página principal
+│   │   ├── index.html      # Página principal (admin)
+│   │   ├── login.html      # Página de login
+│   │   ├── registro.html   # Página de registro
+│   │   ├── perfil.html     # Página de perfil do aluno
 │   │   ├── style.css       # Estilos CSS
-│   │   └── script.js       # JavaScript do frontend
+│   │   ├── login.js        # JavaScript do login
+│   │   ├── registro.js     # JavaScript do registro
+│   │   ├── script.js       # JavaScript da página principal
+│   │   └── perfil.js       # JavaScript do perfil
 │   ├── Dockerfile          # Configuração do container Node.js
 │   ├── index.js            # Arquivo principal da aplicação
 │   └── package.json        # Dependências do projeto
 ├── docker-compose.yml      # Configuração dos serviços Docker
 └── README.md               # Documentação do projeto
 ```
+
+## Notas Importantes
+
+- Os dados são persistentes e armazenados em um volume Docker
+- Validações são feitas para evitar duplicação de email, nome de usuário e matrícula
+- O sistema possui tratamento de erros específicos para melhor experiência do usuário

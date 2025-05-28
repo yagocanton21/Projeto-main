@@ -20,17 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Adicionar botão de logout
   const navbar = document.createElement('nav');
-  navbar.className = 'navbar navbar-expand-lg navbar-dark bg-primary mb-4';
+  navbar.className = 'navbar navbar-expand-lg navbar-dark mb-4';
   navbar.innerHTML = `
     <div class="container">
-      <a class="navbar-brand" href="#">Sistema de Alunos - Administração</a>
+      <a class="navbar-brand" href="#"><i class="fas fa-graduation-cap me-2"></i>Sistema de Alunos - Administração</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#" id="btnLogout">Sair</a>
+            <a class="nav-link" href="#" id="btnLogout"><i class="fas fa-sign-out-alt me-1"></i> Sair</a>
           </li>
         </ul>
       </div>
@@ -128,8 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <td>${aluno.curso || '-'}</td>
             <td>${aluno.matricula || '-'}</td>
             <td>
-              <button class="btn btn-warning btn-sm action-btn" onclick="editarAluno(${aluno.id})">Editar</button>
-              <button class="btn btn-danger btn-sm action-btn" onclick="excluirAluno(${aluno.id})">Excluir</button>
+              <button class="btn btn-warning btn-sm action-btn" onclick="editarAluno(${aluno.id})"><i class="fas fa-edit"></i> Editar</button>
+              <button class="btn btn-danger btn-sm action-btn" onclick="excluirAluno(${aluno.id})"><i class="fas fa-trash-alt"></i> Excluir</button>
             </td>
           `;
           alunosLista.appendChild(row);

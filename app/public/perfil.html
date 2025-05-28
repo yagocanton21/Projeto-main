@@ -5,22 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meu Perfil - Sistema de Alunos</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">Sistema de Alunos</a>
+      <a class="navbar-brand" href="#"><i class="fas fa-graduation-cap me-2"></i>Sistema de Alunos</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="perfil.html">Meu Perfil</a>
+            <a class="nav-link active" href="perfil.html"><i class="fas fa-user me-1"></i> Meu Perfil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" id="btnLogout">Sair</a>
+            <a class="nav-link" href="#" id="btnLogout"><i class="fas fa-sign-out-alt me-1"></i> Sair</a>
           </li>
         </ul>
       </div>
@@ -28,54 +30,67 @@
   </nav>
 
   <div class="container mt-4">
-    <h1 class="mb-4">Meu Perfil</h1>
-    
-    <div class="card">
-      <div class="card-header">
-        <h5>Informações do Aluno</h5>
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="mb-0"><i class="fas fa-user-circle me-2"></i>Perfil do Aluno</h5>
+          </div>
+          <div class="card-body text-center">
+            <div class="mb-3">
+              <i class="fas fa-user-graduate fa-5x text-primary mb-3"></i>
+              <h4 id="perfilNome" class="mb-0"></h4>
+              <p class="text-muted" id="perfilMatricula"></p>
+            </div>
+            <button class="btn btn-primary w-100" id="btnEditar"><i class="fas fa-edit me-2"></i>Editar Informações</button>
+          </div>
+        </div>
       </div>
-      <div class="card-body">
-        <div id="perfilInfo">
-          <div class="mb-3">
-            <strong>Nome:</strong> <span id="perfilNome"></span>
+      
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="mb-0"><i class="fas fa-info-circle me-2"></i>Informações do Aluno</h5>
           </div>
-          <div class="mb-3">
-            <strong>Email:</strong> <span id="perfilEmail"></span>
-          </div>
-          <div class="mb-3">
-            <strong>Telefone:</strong> <span id="perfilTelefone"></span>
-          </div>
-          <div class="mb-3">
-            <strong>Curso:</strong> <span id="perfilCurso"></span>
-          </div>
-          <div class="mb-3">
-            <strong>Matrícula:</strong> <span id="perfilMatricula"></span>
+          <div class="card-body">
+            <div id="perfilInfo">
+              <div class="row mb-3">
+                <div class="col-md-4 fw-bold"><i class="fas fa-envelope me-2"></i>Email:</div>
+                <div class="col-md-8" id="perfilEmail"></div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-4 fw-bold"><i class="fas fa-phone me-2"></i>Telefone:</div>
+                <div class="col-md-8" id="perfilTelefone"></div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-4 fw-bold"><i class="fas fa-graduation-cap me-2"></i>Curso:</div>
+                <div class="col-md-8" id="perfilCurso"></div>
+              </div>
+            </div>
           </div>
         </div>
         
-        <button class="btn btn-primary" id="btnEditar">Editar Informações</button>
-      </div>
-    </div>
-    
-    <div class="card mt-4" id="formEdicao" style="display: none;">
-      <div class="card-header">
-        <h5>Editar Informações</h5>
-      </div>
-      <div class="card-body">
-        <form id="perfilForm">
-          <div class="mb-3">
-            <label for="editTelefone" class="form-label">Telefone</label>
-            <input type="text" class="form-control" id="editTelefone">
+        <div class="card mt-4" id="formEdicao" style="display: none;">
+          <div class="card-header">
+            <h5 class="mb-0"><i class="fas fa-edit me-2"></i>Editar Informações</h5>
           </div>
-          <div class="mb-3">
-            <label for="editCurso" class="form-label">Curso</label>
-            <input type="text" class="form-control" id="editCurso">
+          <div class="card-body">
+            <form id="perfilForm">
+              <div class="mb-3">
+                <label for="editTelefone" class="form-label"><i class="fas fa-phone me-2"></i>Telefone</label>
+                <input type="text" class="form-control" id="editTelefone">
+              </div>
+              <div class="mb-3">
+                <label for="editCurso" class="form-label"><i class="fas fa-graduation-cap me-2"></i>Curso</label>
+                <input type="text" class="form-control" id="editCurso">
+              </div>
+              <div class="d-flex justify-content-end">
+                <button type="button" class="btn btn-secondary me-2" id="btnCancelar"><i class="fas fa-times me-2"></i>Cancelar</button>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-save me-2"></i>Salvar</button>
+              </div>
+            </form>
           </div>
-          <div class="d-flex justify-content-end">
-            <button type="button" class="btn btn-secondary me-2" id="btnCancelar">Cancelar</button>
-            <button type="submit" class="btn btn-primary">Salvar</button>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>

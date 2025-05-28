@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registro - Sistema de Alunos</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,57 +15,57 @@
       <div class="col-md-8">
         <div class="card">
           <div class="card-header">
-            <h4 class="text-center">Registro de Novo Aluno</h4>
+            <h4 class="text-center mb-0"><i class="fas fa-user-plus me-2"></i>Registro de Novo Aluno</h4>
           </div>
           <div class="card-body">
             <form id="registroForm">
               <div class="row">
                 <div class="col-md-6 mb-3">
-                  <label for="nome" class="form-label">Nome Completo</label>
-                  <input type="text" class="form-control" id="nome" required>
+                  <label for="nome" class="form-label"><i class="fas fa-user me-2"></i>Nome Completo</label>
+                  <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo" required>
                 </div>
                 <div class="col-md-6 mb-3">
-                  <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" required>
+                  <label for="email" class="form-label"><i class="fas fa-envelope me-2"></i>Email</label>
+                  <input type="email" class="form-control" id="email" placeholder="exemplo@email.com" required>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 mb-3">
-                  <label for="username" class="form-label">Nome de Usuário</label>
-                  <input type="text" class="form-control" id="username" required>
+                  <label for="username" class="form-label"><i class="fas fa-at me-2"></i>Nome de Usuário</label>
+                  <input type="text" class="form-control" id="username" placeholder="Escolha um nome de usuário" required>
                 </div>
                 <div class="col-md-6 mb-3">
-                  <label for="matricula" class="form-label">Matrícula</label>
-                  <input type="text" class="form-control" id="matricula" required>
+                  <label for="matricula" class="form-label"><i class="fas fa-id-card me-2"></i>Matrícula</label>
+                  <input type="text" class="form-control" id="matricula" placeholder="Número de matrícula" required>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 mb-3">
-                  <label for="senha" class="form-label">Senha</label>
-                  <input type="password" class="form-control" id="senha" required>
+                  <label for="senha" class="form-label"><i class="fas fa-lock me-2"></i>Senha</label>
+                  <input type="password" class="form-control" id="senha" placeholder="Crie uma senha segura" required>
                 </div>
                 <div class="col-md-6 mb-3">
-                  <label for="confirmarSenha" class="form-label">Confirmar Senha</label>
-                  <input type="password" class="form-control" id="confirmarSenha" required>
+                  <label for="confirmarSenha" class="form-label"><i class="fas fa-check-circle me-2"></i>Confirmar Senha</label>
+                  <input type="password" class="form-control" id="confirmarSenha" placeholder="Confirme sua senha" required>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 mb-3">
-                  <label for="telefone" class="form-label">Telefone</label>
-                  <input type="text" class="form-control" id="telefone">
+                  <label for="telefone" class="form-label"><i class="fas fa-phone me-2"></i>Telefone</label>
+                  <input type="text" class="form-control" id="telefone" placeholder="(00) 00000-0000">
                 </div>
                 <div class="col-md-6 mb-3">
-                  <label for="curso" class="form-label">Curso</label>
-                  <input type="text" class="form-control" id="curso">
+                  <label for="curso" class="form-label"><i class="fas fa-graduation-cap me-2"></i>Curso</label>
+                  <input type="text" class="form-control" id="curso" placeholder="Nome do curso">
                 </div>
               </div>
-              <div class="d-grid">
-                <button type="submit" class="btn btn-primary">Registrar</button>
+              <div class="d-grid mt-4">
+                <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-save me-2"></i>Registrar</button>
               </div>
             </form>
-            <div class="mt-3 text-center" id="mensagem"></div>
+            <div class="mt-4 text-center" id="mensagem"></div>
             <div class="mt-3 text-center">
-              <p>Já tem uma conta? <a href="login.html">Faça login</a></p>
+              <p>Já tem uma conta? <a href="login.html" class="fw-bold"><i class="fas fa-sign-in-alt me-1"></i>Faça login</a></p>
             </div>
           </div>
         </div>
